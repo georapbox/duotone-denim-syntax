@@ -6,6 +6,10 @@ atom-text-editor,
   color: @syntax-text-color;
   background-color: @syntax-background-color;
 
+  .comment {
+    color: @syntax-comments-color !important;
+  }
+
   .line.cursor-line {
     background-color: @syntax-cursor-line;
   }
@@ -48,6 +52,10 @@ atom-text-editor,
       color: @syntax-gutter-text-color;
       -webkit-font-smoothing: antialiased;
 
+      -webkit-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
+      border-left: 1px solid transparent;
+
       &.git-line-removed:before {
         bottom: -3px;
       }
@@ -64,6 +72,7 @@ atom-text-editor,
       &.cursor-line {
         color: @syntax-gutter-text-color-selected;
         background-color: @syntax-gutter-background-color-selected;
+        border-color: @syntax-gutter-text-color-selected;
       }
 
       &.cursor-line-no-selection {
